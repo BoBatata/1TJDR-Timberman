@@ -264,7 +264,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d396c11503e35b408f67b1507520cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enviromentAudios:
+  audioClips:
+  - {fileID: 8300000, guid: 51ab5cc3c6f865544a4d1aa848fdced7, type: 3}
+  - {fileID: 8300000, guid: 51ab5cc3c6f865544a4d1aa848fdced7, type: 3}
   - {fileID: 8300000, guid: 51ab5cc3c6f865544a4d1aa848fdced7, type: 3}
 --- !u!1 &474830668
 GameObject:
@@ -570,6 +572,7 @@ GameObject:
   m_Component:
   - component: {fileID: 984075579}
   - component: {fileID: 984075580}
+  - component: {fileID: 984075581}
   m_Layer: 0
   m_Name: SFXAudioManager
   m_TagString: Untagged
@@ -604,8 +607,106 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4db51460fad3db64f835e5eda74f7aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxAudios:
+  audioClips:
   - {fileID: 8300000, guid: 2b224149adae1df409dbf8b800bfb6b3, type: 3}
+  - {fileID: 8300000, guid: 2b224149adae1df409dbf8b800bfb6b3, type: 3}
+  - {fileID: 8300000, guid: 2b224149adae1df409dbf8b800bfb6b3, type: 3}
+--- !u!82 &984075581
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984075578}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1212193369
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,8 +994,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cad016279b72f94fab5c9785d5fb991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enviromentAudio: {fileID: 0}
-  sfxAudio: {fileID: 0}
+  enviromentAudio: {fileID: 418314142}
+  sfxAudio: {fileID: 984075580}
 --- !u!1 &1945571653
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,35 +9,21 @@ public enum SFXAudioType
 
 [RequireComponent(typeof(AudioSource))]
 
-public class SFXAudioManager : MonoBehaviour
+public class SFXAudioManager : AudioABS
 {
-    private AudioSource audioSource;
-    [SerializeField] private AudioClip[] sfxAudios;
-    private void Awake()
+    public void PlaySoundByType(SFXAudioType audioType)
     {
-        audioSource = GetComponent<AudioSource>();
-    }
-
-    private void ChooseSoundType(SFXAudioType audioType)
-    {
-        switch (audioType)
-        {
+        switch (audioType) 
+        { 
             case SFXAudioType.OnClick:
-                PlaySound(sfxAudios[0]);
+                PlaySound(audioClips[0]);
                 break;
             case SFXAudioType.Hit:
-                PlaySound(sfxAudios[1]);
+                PlaySound(audioClips[1]);
                 break;
             case SFXAudioType.Hurt:
-                PlaySound(sfxAudios[2]);
+                PlaySound(audioClips[2]);
                 break;
         }
-    }
-
-
-    private void PlaySound(AudioClip audioType)
-    {
-        audioSource.clip = audioType;
-        audioSource.Play();
     }
 }

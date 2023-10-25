@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
-{
+{     
     [SerializeField] private Button playButton;
 
     private void Awake()
@@ -15,6 +15,8 @@ public class UIManager : MonoBehaviour
 
     private void GoToGameScene()
     {
-        SceneManager.LoadScene("Scene_Game");    
+        //GameManager.Instance.PlaySFXAudioByType();
+        SceneManager.LoadScene("Scene_Game");
+        //GameManager.Instance.PlaySFXAudioByType();
     }
 }
