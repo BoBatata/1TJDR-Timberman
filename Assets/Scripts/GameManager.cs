@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManager instance;
+    [HideInInspector] public InputManager inputManager;
+
     [SerializeField] private AudioSystem audioSystem;
 
     private void Awake()
     {
         #region Singleton
-        if(Instance == null) 
+        if(instance == null) 
         { 
-            Instance = this;
+            instance = this;
         }
         else
         {
             Destroy(this.gameObject);
         }
         #endregion
+
+        inputManager = new InputManager();
         DontDestroyOnLoad(this.gameObject);
     }
 
