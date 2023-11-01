@@ -22,6 +22,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         //ToDo
         animator.SetTrigger("pHit");
+        GameManager.instance.PlaySFXAudioByType(SFXAudioType.Hit);  
         Debug.Log("HIT!");
     }
 

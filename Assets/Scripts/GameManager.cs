@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        audioSystem.PlayEnviromentAudioByType(EnviromentAudioType.Menu);
+        PlayEnviromentAudioByType(EnviromentAudioType.Menu);
     }
 
     public void PlayEnviromentAudioByType(EnviromentAudioType audioType)
