@@ -6,8 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [HideInInspector] public InputManager inputManager;
-
     [SerializeField] private AudioSystem audioSystem;
+    [SerializeField] private TrunkPool trunkPool;
 
     private void Awake()
     {
@@ -41,5 +41,12 @@ public class GameManager : MonoBehaviour
         audioSystem.PlaySFXAudioByType(audioType);
     }
 
-
+    public void OnTrunkHit()
+    {
+        trunkPool.TrunkHit();
+    }
+    public void GameOver()
+    {
+        
+    }
 }

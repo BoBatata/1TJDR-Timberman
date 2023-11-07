@@ -17,18 +17,12 @@ public class TrunkPool : MonoBehaviour
         pooledTrunks = new List<TrunkBase>();
     }
 
-    private void TrunkHit()
-    {
-        TrunkBase hittedTrunk = activeTrunks[activeTrunks.Count - 1];
-
-        hittedTrunk.TrunkHitted();
-    }
 
     private void RentTruck()
     {
         TrunkBase trunk;
 
-        if (pooledTrunks.FirstOrDefault() == null)
+        if (pooledTrunks.Count() < 1)
         {
             trunk = InstantiateTrunk();
         }
@@ -38,8 +32,17 @@ public class TrunkPool : MonoBehaviour
             pooledTrunks.Remove(trunk);
         }
 
+        trunk.transform.position = new Vector2 (0, 6.6f);
         trunk.gameObject.SetActive(true);
         activeTrunks.Add(trunk);
+    }
+    public void TrunkHit()
+    {
+        TrunkBase hittedTrunk = activeTrunks.FirstOrDefault();
+
+        hittedTrunk.TrunkHitted();
+        ReturnTrunkToPool(hittedTrunk);
+        RentTruck();
     }
 
     private void ReturnTrunkToPool(TrunkBase trunk)
