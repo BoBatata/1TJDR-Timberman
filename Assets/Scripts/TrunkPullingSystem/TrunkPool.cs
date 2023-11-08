@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class TrunkPool : MonoBehaviour
 {
@@ -9,12 +10,16 @@ public class TrunkPool : MonoBehaviour
 
     [SerializeField] private GameObject trunkPrebab;
     [SerializeField] private List<TrunkBase> activeTrunks;
-
-    private List<TrunkBase> pooledTrunks;
+    [SerializeField] private List<TrunkBase> pooledTrunks;
 
     private void Awake()
     {
-        pooledTrunks = new List<TrunkBase>();
+        foreach(TrunkBase trunk in pooledTrunks) 
+        { 
+            trunk.gameObject.SetActive(false);
+        }
+
+        GameManager.instance.trunkPool = this;
     }
 
 
@@ -28,7 +33,8 @@ public class TrunkPool : MonoBehaviour
         }
         else
         {
-            trunk = pooledTrunks.FirstOrDefault();
+            int randoTrunk = Random.Range(0, pooledTrunks.Count());
+            trunk = pooledTrunks[randoTrunk];
             pooledTrunks.Remove(trunk);
         }
 

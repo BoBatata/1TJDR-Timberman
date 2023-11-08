@@ -13,7 +13,7 @@ public abstract class TrunkBase : MonoBehaviour
     {
         TrunkPool.OnTrunkHitted += TrunkFall;
         int randoNum = Random.Range(0, 2);
-        spriteRenderer.flipX = randoNum == 0;
+        spriteRenderer.flipY = randoNum == 0;
     }
     private void Awake()
     {
